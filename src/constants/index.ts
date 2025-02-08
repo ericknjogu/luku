@@ -8,7 +8,7 @@ export const headerData = [
     href: "/men",
   },
   {
-    title: "Woman",
+    title: "Women",
     href: "/woman",
   },
   {

@@ -1,16 +1,12 @@
 import Container from "@/components/Container";
 import { Button } from "@/components/ui/button";
+import HomeBanner from "@/components/HomeBanner";
 
 export default function Home() {
   return (
-    <div>
+    <div className="mt-4">
       <Container>
-        <div className="text-center mt-5 mb-5 text-4xl font-bold uppercase">
-          Luku Ecommerce Platform
-        </div>
-        <div>
-          <Button>Sign Up</Button>
-        </div>
+        <HomeBanner />
       </Container>
     </div>
   );
