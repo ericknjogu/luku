@@ -23,7 +23,7 @@ const socialLinks = [
       <img
         height="32"
         width="24"
-        className="text-white"
+        className="text-white bg-white"
         src="https://unpkg.com/simple-icons@v14/icons/x.svg"
       />
     ),
@@ -58,7 +58,8 @@ export default function SocialMedia({
             <TooltipTrigger asChild>
               <Link
                 href={item?.href}
-                target="blank"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
                   "p-2 border rounded-full hover-text-white hover-border-white hoverEffect",
                   iconClassName
