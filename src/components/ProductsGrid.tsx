@@ -1,12 +1,12 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import HomeTabbar from "./HomeTabbar";
 
 export default function ProductsGrid() {
-  const [selectedTab, setSelectedTab] = React.useState("");
+  const [selectedTab, setSelectedTab] = useState("");
   return (
     <div className="mt-10 flex flex-col items-center">
-      <HomeTabbar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+      <HomeTabbar selectedTab={selectedTab} onTabSelect={setSelectedTab} />
     </div>
   );
 }
