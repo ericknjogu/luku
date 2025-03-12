@@ -20,14 +20,9 @@ export default function ProductsGrid() {
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
-      try {
-        const response = await client.fetch(query, params);
-        console.log(response);
-      } catch (error) {
-        console.log("product fetching error", error);
-      } finally {
-        setLoading(false);
-      }
+      const response = await client.fetch(query, params).catch(console.error);
+      setProducts(await response);
+      setLoading(false);
     }
     fetchData();
   }, [selectedTab]);
@@ -35,6 +30,14 @@ export default function ProductsGrid() {
   return (
     <div className="mt-10 flex flex-col items-center">
       <HomeTabbar selectedTab={selectedTab} onTabSelect={setSelectedTab} />
+
+      {loading ? (
+        <div>Loading</div>
+      ) : (
+        products &&
+        products.length > 0 &&
+        products.map((product) => <p key={product?.id}>{product?.name}</p>)
+      )}
     </div>
   );
 }
