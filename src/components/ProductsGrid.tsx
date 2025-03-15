@@ -4,6 +4,7 @@ import HomeTabbar from "./HomeTabbar";
 import { productType } from "@/constants";
 import { client } from "@/sanity/lib/client";
 import { Product } from "../../sanity.types";
+import ProductCard from "./ProductCard";
 
 export default function ProductsGrid() {
   const [selectedTab, setSelectedTab] = useState(productType[0]?.title || "");
@@ -34,11 +35,15 @@ export default function ProductsGrid() {
 
       {loading ? (
         <div>Loading</div>
+      ) : products && products?.length > 0 ? (
+        products?.map((product: Product) => (
+          <div key={product._id}>
+            <ProductCard product={product} />
+          </div>
+        ))
       ) : (
-        products &&
-        products.length > 0 &&
-        products.map((product: Product) => <p key={product?._id}>{product?.name}</p>)
-      )}
+        <div>No products found</div>
+      )}x
     </div>
   );
 }
