@@ -32,18 +32,20 @@ export default function ProductsGrid() {
   return (
     <div className="mt-10 flex flex-col items-center">
       <HomeTabbar selectedTab={selectedTab} onTabSelect={setSelectedTab} />
-
       {loading ? (
         <div>Loading</div>
       ) : products && products?.length > 0 ? (
-        products?.map((product: Product) => (
-          <div key={product._id}>
-            <ProductCard product={product} />
-          </div>
-        ))
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10">
+          {products?.map((product: Product) => (
+            <div key={product._id}>
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </div>
       ) : (
         <div>No products found</div>
-      )}x
+      )}
+      x
     </div>
   );
 }
