@@ -14,15 +14,14 @@ export default function NoProductsAvailable({
       className={cn(
         "flex flex-col items-center justify-center py-10",
         className
-      )}
-    >
+      )}>
       <motion.div>
         <h2>No products Available</h2>
       </motion.div>
       <motion.p>
-        We&apos;re sorry, there are no products available for{" "}
+        We&apos;re sorry, there are no{" "}
         <span className="text-base font-semibold text-darkColor">
-          {selectedTab}
+          {selectedTab}s
         </span>{" "}
         at the moment.
       </motion.p>
