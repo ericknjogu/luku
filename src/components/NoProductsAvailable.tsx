@@ -15,7 +15,7 @@ export default function NoProductsAvailable({
         "flex flex-col items-center justify-center py-10",
         className
       )}>
-      <motion.div>
+      <motion.div className="">
         <h2>No products Available</h2>
       </motion.div>
       <motion.p>
