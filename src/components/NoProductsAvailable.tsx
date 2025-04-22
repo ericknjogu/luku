@@ -23,7 +23,7 @@ export default function NoProductsAvailable({
         <span className="text-base font-semibold text-darkColor">
           {selectedTab}s
         </span>{" "}
-        at the moment.
+        at the moment. Please check back later
       </motion.p>
     </div>
   );
